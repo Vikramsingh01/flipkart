@@ -33,7 +33,7 @@ public class BasicUtill {
 
 	}
 
-	private static WebDriver driver;
+	public static WebDriver driver;
 
 	public static WebDriver getDriver() {
 		return driver;

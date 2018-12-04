@@ -16,12 +16,12 @@ public class Login_Test {
 
 	@BeforeTest
 	public void openBrowserAndApps() {
-		loginPage.openApps();
+		loginPage.openApps(); 
 
 	}
 
 	@BeforeMethod
-	public void loginTest() {
+	public void loginTest() throws InterruptedException {
 		loginPage.login();
 	}
 
