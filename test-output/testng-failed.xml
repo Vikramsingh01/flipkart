@@ -7,9 +7,9 @@
         <methods>
           <include name="closeBrowser"/>
           <include name="logoutFromApps"/>
-          <include name="login"/>
           <include name="loginTest"/>
           <include name="openBrowserAndApps"/>
+          <include name="searchForMobile"/>
         </methods>
       </class> <!-- com.flipkart.testcases.Login_Test -->
     </classes>

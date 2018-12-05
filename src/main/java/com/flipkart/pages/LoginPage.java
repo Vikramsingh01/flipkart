@@ -15,13 +15,12 @@ public class LoginPage extends BasicUtill {
 	@FindBy(xpath = "//a[text()='Login & Signup']")
 	private WebElement login_Lnk;
 	@FindBy(xpath = "//input[@class='_2zrpKA']")
-	 static WebElement username_TxtBox;
+	static WebElement username_TxtBox;
 	@FindBy(className = "_2zrpKA _3v41xv")
-	 static WebElement password_TxtBox;
+	static WebElement password_TxtBox;
 	@FindBy(xpath = "//button[@class='vh79eN']")
-	 static WebElement Btn_submit;
-	
-	
+	static WebElement Btn_submit;
+
 	public void openApps() {
 		openBrowser(ApplicationProperties.getProperty("browser"));
 		getDriver().get(ApplicationProperties.getProperty("URL"));
@@ -29,18 +28,22 @@ public class LoginPage extends BasicUtill {
 	}
 
 	public void login() throws InterruptedException {
-		//login_Lnk.click();
+		// login_Lnk.click();
 		Thread.sleep(1000);
 		String userName = ApplicationProperties.getProperty("Username");
 		String password = ApplicationProperties.getProperty("Password");
-		WebElement username_TxtBox =driver.findElement(By.xpath("//input[@class='_2zrpKA']"));
+		WebElement username_TxtBox = driver.findElement(By.xpath("//input[@class='_2zrpKA']"));
 		username_TxtBox.sendKeys(userName);
-		WebElement password_TxtBox =driver.findElement(By.xpath("//input[@class='_2zrpKA _3v41xv']"));
+		WebElement password_TxtBox = driver.findElement(By.xpath("//input[@class='_2zrpKA _3v41xv']"));
 		password_TxtBox.sendKeys(password);
-		WebElement submit = driver.findElement(By.xpath("//button[@class='vh79eN']"));
-		submit.submit();
+		WebElement submit = driver.findElement(By.xpath("//form/div[3]/button"));
+		Thread.sleep(1000);
+		submit.click();
 		Thread.sleep(2000);
+		WebElement electronics_TopMenu = driver.findElement(By.xpath("(//span[@class='_1QZ6fC _3Lgyp8'])[1]"));
+		System.out.println("Top Menu : "+electronics_TopMenu.getText());
 	}
+
 
 	public static void enter_Text(String value) {
 		username_TxtBox.sendKeys(value);
